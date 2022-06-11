@@ -1,0 +1,101 @@
+.list-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 60%;
+    height: 500px;
+    overflow: scroll;
+    margin: 3rem auto;
+    padding: 0.3rem 0.6rem;
+
+    .todo-list {
+        $icon-dimention: 1.5em;
+        $color-primary: rgba(17, 17, 238, 0.7);
+
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: -webkit-fill-available;
+        height: 50px;
+        background: white;
+        margin: 0.5rem auto;
+        padding: 0.5rem 1rem;
+        border-radius: 10px;
+
+        .checkbox {
+            width: $icon-dimention;
+            height: $icon-dimention;
+            border-radius: 30%;
+            appearance: none;
+            -webkit-appearance: none;
+            outline: none;
+            cursor: pointer;
+            border: 1px solid black;
+            transition: all 0.5s;
+        }
+
+        .checkbox:hover {
+            background: rgba(128, 128, 128, 0.301);
+        }
+
+        .checkbox:checked {
+            background-color: $color-primary;
+        }
+
+        .checkbox[disabled] {
+            pointer-events: auto;
+            cursor: not-allowed;
+            background-color: #cccccc;
+        }
+
+        .input-field {
+            width: 80%;
+            height: 30px;
+            font-size: 15px;
+            border: none;
+            outline: none;
+            transition: all 0.3s;
+        }
+
+        .remove-icon {
+            height: $icon-dimention;
+            width: $icon-dimention;
+            outline: none;
+            cursor: pointer;
+        }
+
+        .remove-icon:hover {
+            color: red;
+        }
+    }
+
+    .loading {
+        cursor: not-allowed;
+        background: rgba(128, 128, 128, 0.5);
+        transition: all 0.3s;
+
+        .input-field {
+            background: none;
+            transition: none;
+        }
+
+        .remove-icon,
+        .checkbox {
+            pointer-events: none;
+            outline: none;
+        }
+
+        .remove-icon:hover {
+            color: inherit;
+        }
+    }
+}
+
+.list-section {
+    -ms-overflow-style: none; /* Internet Explorer 10+ */
+    scrollbar-width: none; /* Firefox */
+}
+
+.list-section::-webkit-scrollbar {
+    display: none; /* Google Chrome */
+}

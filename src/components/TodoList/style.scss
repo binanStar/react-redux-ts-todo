@@ -1,0 +1,60 @@
+.todo-container {
+    width: 50%;
+    min-height: 80vh;
+    background: linear-gradient(
+        to right bottom,
+        rgba(255, 255, 255, 0.579),
+        rgba(255, 255, 255, 0.3)
+    );
+    margin: 0 auto;
+    border-radius: 15px;
+
+    .input-section {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 60%;
+        height: 50px;
+        background: white;
+        margin: 3rem auto;
+        padding: 0.3rem 1rem;
+        border-radius: 10px;
+
+        .input-field {
+            width: 80%;
+            height: 30px;
+            font-size: 15px;
+            border: none;
+            outline: none;
+            transition: all 0.3s;
+        }
+
+        .input-field:focus {
+            font-size: 17px;
+            border-bottom: 0.5px solid gray;
+        }
+
+        .button {
+            width: 15%;
+            height: 2.3em;
+            border: none;
+            outline: none;
+            border-radius: 7px;
+            color: white;
+            font-size: 15px;
+            font-weight: 600;
+            background: rgba(17, 17, 238, 0.7);
+            cursor: pointer;
+        }
+
+        .button[disabled] {
+            pointer-events: none;
+            background-color: #cccccc;
+            color: #666666;
+        }
+
+        .button:hover {
+            background: rgba(17, 17, 238, 1);
+        }
+    }
+}
