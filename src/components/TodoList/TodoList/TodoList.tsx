@@ -1,8 +1,9 @@
-import TodoItem from './TodoItem';
-import './style.scss';
+import { useAppSelector } from "../../../redux/hooks";
+import "./style.scss";
+import TodoItem from "./TodoItem";
 
 const TodoList = () => {
-    const todoList: any = [{id: 1, title: "Hello world", completed: false }]
+    const { todoList } = useAppSelector((state) => state.todo);
 
     return (
         <div className="list-section">

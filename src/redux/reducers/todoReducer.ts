@@ -1,8 +1,14 @@
 import {
+    ADD_TODO_SUCCESS,
+    DELETE_TODO_SUCCESS,
+    FETCH_TODO_SUCCESS,
     LOADING_END,
     LOADING_START,
     TodoDispatchType,
+    UPDATE_TODO_SUCCESS,
 } from "../actions/todoActionTypes";
+import { deleteTodoById } from "../actions/todoActionUtils";
+import { updateTodoItem } from "./../actions/todoActionUtils";
 
 export type TodoType = {
     id: number;
@@ -30,6 +36,21 @@ const todoReducer = (
             return { ...state, loading: true };
         case LOADING_END:
             return { ...state, loading: false };
+        case FETCH_TODO_SUCCESS:
+            return { ...state, todoList: action.payload };
+        case ADD_TODO_SUCCESS:
+            const newTodoList = [action.payload, ...state.todoList];
+            return { ...state, todoList: newTodoList };
+        case DELETE_TODO_SUCCESS:
+            return {
+                ...state,
+                todoList: deleteTodoById(state.todoList, action.id),
+            };
+        case UPDATE_TODO_SUCCESS:
+            return {
+                ...state,
+                todoList: updateTodoItem(state.todoList, action.payload),
+            };
         default:
             return state;
     }

@@ -1,7 +1,9 @@
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import "./App.scss";
-import TodoList from "./components/TodoList/TodoIndex";
 import Login from "./components/Login/Login";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import TodoList from "./components/TodoList/TodoIndex";
 
 const App = () => {
     return (
@@ -12,6 +14,8 @@ const App = () => {
                     <Route path="/login" element={<Login />} />
                 </Routes>
             </BrowserRouter>
+
+            <ToastContainer />
         </div>
     );
 };

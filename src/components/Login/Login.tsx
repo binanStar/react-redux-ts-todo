@@ -1,31 +1,27 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
+import { login } from "../../redux/actions/userActions";
+import { useAppDispatch, useAppSelector } from "../../redux/hooks";
 import "./style.scss";
-
-const VALID_USERNAME_LIST = [
-    "username_1",
-    "username_2",
-    "username_3",
-    "username_4",
-    "username_5",
-    "username_6",
-    "username_7",
-    "username_8",
-    "username_9",
-    "username_10",
-];
 
 const Login = () => {
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
 
+    const dispatch = useAppDispatch();
+    const navigate = useNavigate();
+    const { userId } = useAppSelector((state) => state.user);
+
     const handleLogin = (event: { preventDefault: () => void }) => {
         event.preventDefault();
-        if (VALID_USERNAME_LIST.includes(username) && password === "admin") {
-            console.log("Login successful");
-            const userId = username.split("_")[1];
-            console.log("UserId: ", userId);
-        }
+        dispatch(login(username, password));
     };
+
+    useEffect(() => {
+        if (userId) {
+            navigate("/");
+        }
+    }, [navigate, userId]);
 
     return (
         <form className="login-section" onSubmit={handleLogin}>
