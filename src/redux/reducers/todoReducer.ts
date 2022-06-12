@@ -20,11 +20,13 @@ export type TodoType = {
 interface DefaultStateI {
     loading: boolean;
     todoList: TodoType[];
+    lastModified: number
 }
 
 const defaultState: DefaultStateI = {
     loading: false,
     todoList: [],
+    lastModified: Date.now(),
 };
 
 const todoReducer = (
@@ -37,19 +39,21 @@ const todoReducer = (
         case LOADING_END:
             return { ...state, loading: false };
         case FETCH_TODO_SUCCESS:
-            return { ...state, todoList: action.payload };
+            return { ...state, todoList: action.payload, lastModified: Date.now() };
         case ADD_TODO_SUCCESS:
             const newTodoList = [action.payload, ...state.todoList];
-            return { ...state, todoList: newTodoList };
+            return { ...state, todoList: newTodoList, lastModified: Date.now() };
         case DELETE_TODO_SUCCESS:
             return {
                 ...state,
                 todoList: deleteTodoById(state.todoList, action.id),
+                lastModified: Date.now()
             };
         case UPDATE_TODO_SUCCESS:
             return {
                 ...state,
                 todoList: updateTodoItem(state.todoList, action.payload),
+                lastModified: Date.now()
             };
         default:
             return state;

@@ -3,8 +3,9 @@
     flex-direction: column;
     align-items: center;
     width: 60%;
-    height: 500px;
-    overflow: scroll;
+    min-height: 500px;
+    max-height: 500px;
+    overflow-y: scroll;
     margin: 3rem auto;
     padding: 0.3rem 0.6rem;
 
@@ -91,11 +92,14 @@
     }
 }
 
-.list-section {
-    -ms-overflow-style: none; /* Internet Explorer 10+ */
-    scrollbar-width: none; /* Firefox */
-}
-
 .list-section::-webkit-scrollbar {
-    display: none; /* Google Chrome */
-}
+    width: 8px;
+  }
+  .list-section::-webkit-scrollbar-track {
+    background: gray;
+    border-radius: 20px;
+  }
+  .list-section::-webkit-scrollbar-thumb {
+    background-color: white;
+    border-radius: 20px;
+  }

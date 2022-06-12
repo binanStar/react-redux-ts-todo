@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { BallTriangle } from "react-loader-spinner";
-import { addTodoList, AddTodoPayload } from "../../redux/actions/todoActions";
-import { useAppDispatch, useAppSelector } from "../../redux/hooks";
+import { addTodoList, AddTodoPayload } from "../../../redux/actions/todoActions";
+import { useAppDispatch, useAppSelector } from "../../../redux/hooks";
 
 const InputSection = () => {
     const [title, setTitle] = useState("");

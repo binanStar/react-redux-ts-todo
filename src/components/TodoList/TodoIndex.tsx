@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import { fetchTodoList } from "../../redux/actions/todoActions";
 import { useAppDispatch, useAppSelector } from "../../redux/hooks";
 import "./style.scss";
-import TodoInput from "./TodoInput";
+import TodoInput from "./TodoInput/TodoInput";
 import TodoList from "./TodoList/TodoList";
 
 const TodoIndex = () => {
