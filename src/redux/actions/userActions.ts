@@ -1,5 +1,5 @@
 import { Dispatch } from "redux";
-import { UserDispatchType, LOGIN_SUCCESS } from "./userActionTypes";
+import { UserDispatchType, LOGIN_SUCCESS, LOGIN_START } from "./userActionTypes";
 import { toast } from "react-toastify";
 const VALID_USERNAME_LIST = [
     "username_1",
@@ -17,6 +17,7 @@ const VALID_USERNAME_LIST = [
 export const login =
     (username: string, password: string) =>
     (dispatch: Dispatch<UserDispatchType>) => {
+        dispatch({ type: LOGIN_START })
         const id = toast.loading("Logging you in...");
 
         // Intentional delay for nicer transition

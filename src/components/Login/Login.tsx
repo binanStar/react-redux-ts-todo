@@ -10,11 +10,11 @@ const Login = () => {
 
     const dispatch = useAppDispatch();
     const navigate = useNavigate();
-    const { userId } = useAppSelector((state) => state.user);
+    const { userId, loading } = useAppSelector((state) => state.user);
 
-    const handleLogin = (event: { preventDefault: () => void }) => {
+    const handleLogin = async (event: { preventDefault: () => void }) => {
         event.preventDefault();
-        dispatch(login(username, password));
+        await dispatch(login(username, password));
     };
 
     useEffect(() => {
@@ -52,7 +52,8 @@ const Login = () => {
                 value={password}
                 onChange={(event) => setPassword(event.target.value)}
             />
-            <button type="submit">Login</button>
+
+            <button type="submit" disabled={loading}>Login</button>
         </form>
     );
 };

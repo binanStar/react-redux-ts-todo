@@ -1,14 +1,14 @@
 export const LOGIN_SUCCESS = 'LOGIN_SUCCESS'
-export const LOGIN_FAILED = 'LOGIN_FAILED'
+export const LOGIN_START = 'LOGIN_START'
 
+
+interface LoginStart {
+  type: typeof LOGIN_START
+}
 
 interface LoginSuccess {
   type: typeof LOGIN_SUCCESS
   userId: number
 }
 
-interface LoginFailed {
-  type: typeof LOGIN_FAILED
-}
-
-export type UserDispatchType = LoginSuccess | LoginFailed
+export type UserDispatchType = LoginSuccess | LoginStart
