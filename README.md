@@ -21,10 +21,11 @@ The following endpoint [Todo API](https://jsonplaceholder.typicode.com/todos) ha
 ## Project Screen Shot(s)
 
 Login screen <br />
-<img alt="Gmail" width="650px" height="350px" src="https://raw.githubusercontent.com/shovon588/todo-with-react-redux-typescript/master/.redesign-asset/login.png" />
+<img alt="Login screen" width="700px" height="400px" src="https://raw.githubusercontent.com/shovon588/todo-with-react-redux-typescript/master/.redesign-asset/login.PNG" />
 
+<br />
 Dashboard <br />
-<img alt="Gmail" width="650px" height="350px" src="https://raw.githubusercontent.com/shovon588/todo-with-react-redux-typescript/master/.redesign-asset/dashboard.png" />
+<img alt="Dashboard" width="650px" height="350px" src="https://raw.githubusercontent.com/shovon588/todo-with-react-redux-typescript/master/.redesign-asset/dashboard.PNG" />
 
 
 ## Installation and Setup Instructions
