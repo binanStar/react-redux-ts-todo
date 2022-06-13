@@ -43,7 +43,7 @@ const InputSection = () => {
                 />
             ) : (
                 <button
-                    type="button"
+                    type="submit"
                     className="button"
                     disabled={title.length < 1}
                 >

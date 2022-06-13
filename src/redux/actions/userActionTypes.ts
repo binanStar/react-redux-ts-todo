@@ -1,5 +1,6 @@
 export const LOGIN_SUCCESS = 'LOGIN_SUCCESS'
 export const LOGIN_START = 'LOGIN_START'
+export const LOGIN_END = 'LOGIN_END'
 
 
 interface LoginStart {
@@ -11,4 +12,8 @@ interface LoginSuccess {
   userId: number
 }
 
-export type UserDispatchType = LoginSuccess | LoginStart
+interface LoginEnd {
+  type: typeof LOGIN_END
+}
+
+export type UserDispatchType = LoginSuccess | LoginStart | LoginEnd
