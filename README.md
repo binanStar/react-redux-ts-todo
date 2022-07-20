@@ -1,4 +1,4 @@
-# Project: Markopolo.ai Frontend Engineer take home challenge
+# Project: TODO List with React, Redux, TypeScript
 
 Deployed project: [Live demo](https://markopolo-crud-test.vercel.app/)
 
